@@ -1,0 +1,20 @@
+py -3 -m pip install -U discord.py[voice]
+
+実数値範囲まで表示しても面白いかも
+グラフ作ったりとか
+
+main:実行用
+out.wav:speakerで用いる音源
+
+procfile:実行ファイルをサーバーに指示する
+requirements:実行前にサーバーにインストールするものを記載
+runtime:サーバーの実行環境を指定
+
+-------------
+cogs
+changehelp:helpコマンドの変更
+makethread:スレッド作成機能
+managerole:役職関係
+response:メッセージ処理
+speaker:TTS機能
+pokedata:ポケモンのデータを返す
