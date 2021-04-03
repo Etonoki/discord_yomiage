@@ -9,6 +9,9 @@ VERSION = "v1"
 URL = "https://api.voicetext.jp/%s/tts" % VERSION
 key = "sge9n65nsy41mkve"
 
+tenorimori = 753983400859402251
+piriko = 824660451509796914
+
 default = {
     "text": "",
     "speaker": "hikari",
@@ -265,7 +268,7 @@ class Speaker(commands.Cog):
 
     @commands.command(aliases=['t'])
     async def tts(self,ctx):
-        guild = self.bot.get_guild(753983400859402251)
+        guild = self.bot.get_guild(piriko)
         ttsrole = guild.get_role(801443141181112330)
         if ttsrole in ctx.author.roles:
             await ctx.author.remove_roles(ttsrole)
@@ -279,7 +282,7 @@ class Speaker(commands.Cog):
     @commands.command(aliases=['de'])
     async def debug(self, ctx):
         global holdlist
-        guild = self.bot.get_guild(753983400859402251)
+        guild = self.bot.get_guild(piriko)
         await ctx.send("play:{}".format(guild.voice_client.is_playing()))
         await ctx.send("holdlist:{}".format(holdlist))
 
@@ -292,7 +295,7 @@ class Speaker(commands.Cog):
         global holdlist
         #channel = self.bot.get_channel(659742326502981662)
         #await channel.send("test")
-        guild = self.bot.get_guild(753983400859402251)
+        guild = self.bot.get_guild(piriko)
         try:
             if guild.voice_client.is_playing() == False and len(holdlist) > 0:
                 out = holdlist.pop(0)
@@ -319,7 +322,7 @@ class Speaker(commands.Cog):
         if member.bot:
             return
         
-        guild = self.bot.get_guild(753983400859402251)
+        guild = self.bot.get_guild(piriko)
         if guild.voice_client != None:
             pass
         else:
