@@ -42,9 +42,7 @@ dic = {
         "speaker": "show",
         "pitch": 50,
         "speed": 50,
-        "volume": 120,
-        "emotion": "anger",
-        "emotion_level": 4
+        "volume": 120
     },
     "660883104499761173": {
         "text":"",
