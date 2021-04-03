@@ -17,7 +17,7 @@ default = {
     "speaker": "hikari",
     "pitch": 110,
     "speed": 110,
-    "volume": 140
+    "volume": 120
 }
 
 dic = {
@@ -26,14 +26,14 @@ dic = {
         "speaker": "haruka",
         "pitch": 100,
         "speed": 100,
-        "volume": 140
+        "volume": 120
     },
     "645141235056771082": {
         "text":"",
         "speaker": "haruka",
         "pitch": 100,
         "speed": 100,
-        "volume": 140,
+        "volume": 120,
         "emotion": "happiness",
         "emotion_level": 3
     },
@@ -42,7 +42,7 @@ dic = {
         "speaker": "haruka",
         "pitch": 100,
         "speed": 100,
-        "volume": 140,
+        "volume": 120,
         "emotion": "sadness",
         "emotion_level": 4
     }
@@ -78,9 +78,9 @@ class Speaker(commands.Cog):
         #リアクション絵文字によって判定、数字は組み合わせで作られてるのでunicodeじゃダメ
 
         #TTS判定
-        if payload.message_id == 801441448272330763:
+        if payload.message_id == 827892914839355443:
             if payload.emoji.name == '1️⃣':#1
-                ttsrole = guild.get_role(801443141181112330)
+                ttsrole = guild.get_role(827887373106544682)
                 await member.add_roles(ttsrole)
                 await member.send("TTSを付与しました")
                 return
@@ -97,7 +97,7 @@ class Speaker(commands.Cog):
 
 
         #話者
-        elif payload.message_id == 801441536498860052:
+        elif payload.message_id == 827892982384164894:
             if payload.emoji.name == '1️⃣':#1
                 dic[userID]["speaker"] = "show"
                 #showくんならエモート削除
@@ -120,7 +120,7 @@ class Speaker(commands.Cog):
                 return
 
         #ピッチ
-        elif payload.message_id == 801441745170595840:
+        elif payload.message_id == 827893062876921856:
             if payload.emoji.name == '1️⃣':#1
                 dic[userID]["pitch"] = 50
             elif payload.emoji.name == '2️⃣':#2
@@ -139,7 +139,7 @@ class Speaker(commands.Cog):
                 return
 
         #スピード
-        elif payload.message_id == 801441857170440222:
+        elif payload.message_id == 827893124244308008:
             if payload.emoji.name == '1️⃣':#1
                 dic[userID]["speed"] = 50
             elif payload.emoji.name == '2️⃣':#2
@@ -166,7 +166,7 @@ class Speaker(commands.Cog):
                 return
 
         #感情
-        elif payload.message_id == 801441904931635250:
+        elif payload.message_id == 827893199628402709:
             if dic[userID]["speaker"] == "show":
                 await member.send("showくんに感情はありません")
                 return
@@ -188,7 +188,7 @@ class Speaker(commands.Cog):
                 return
 
         #感情レベル
-        elif payload.message_id == 801441951152865281:
+        elif payload.message_id == 827893261703446529:
             #データが存在しない場合は返信
             if "emotion" not in dic[userID]:
                 await member.send("感情が設定されていません")
@@ -224,9 +224,9 @@ class Speaker(commands.Cog):
         guild = self.bot.get_guild(payload.guild_id) 
         member = guild.get_member(payload.user_id)
         #絵文字によって判定
-        if payload.message_id == 801441448272330763:
+        if payload.message_id == 827892914839355443:
             if payload.emoji.name == '1️⃣':#check
-                ttsrole = guild.get_role(801443141181112330)
+                ttsrole = guild.get_role(827887373106544682)
                 await member.remove_roles(ttsrole)
                 await member.send("TTSを外しました")
                 return
@@ -269,7 +269,7 @@ class Speaker(commands.Cog):
     @commands.command(aliases=['t'])
     async def tts(self,ctx):
         guild = self.bot.get_guild(piriko)
-        ttsrole = guild.get_role(801443141181112330)
+        ttsrole = guild.get_role(827887373106544682)
         if ttsrole in ctx.author.roles:
             await ctx.author.remove_roles(ttsrole)
             msg = await ctx.send("TTS消したよ")
