@@ -37,6 +37,15 @@ dic = {
         "emotion": "happiness",
         "emotion_level": 3
     },
+    "808283310853062676": {
+        "text":"",
+        "speaker": "show",
+        "pitch": 50,
+        "speed": 50,
+        "volume": 120,
+        "emotion": "anger",
+        "emotion_level": 4
+    },
     "660883104499761173": {
         "text":"",
         "speaker": "haruka",
@@ -210,8 +219,9 @@ class Speaker(commands.Cog):
         for k in dic[userID].items():
             msg = f"{msg}{k[0]}:{k[1]}\n"
         embed = discord.Embed(description=f"```{msg}```",color=0xff40ff)
-        embed.set_thumbnail(url=member.avatar_url)
-        embed.set_author(name="{}さんの設定".format(member.name),icon_url=self.bot.user.avatar_url)
+        #embed.set_thumbnail(url=member.avatar_url)
+        #embed.set_author(name="{}さんの設定".format(member.name),icon_url=self.bot.user.avatar_url)
+        embed.set_author(name="{}さんの設定".format(member.name))
 
         await member.send(embed=embed)
 
