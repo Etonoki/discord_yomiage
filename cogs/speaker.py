@@ -354,16 +354,6 @@ class Speaker(commands.Cog):
         if message.author.bot:
             return
 
-        #botにメンションで参加
-        if self.bot.user in message.mentions:
-            if message.author.voice is None:
-                await message.channel.send('{} ボイスチャンネルに参加した上で、もう一度実行してください。'.format(message.author.mention))
-                return
-            else:
-                vc = message.author.voice.channel
-                await vc.connect()
-                return
-
         if "/" in message.content: 
             return
         if message.content.startswith("!"): 
