@@ -7,10 +7,14 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 # 読み込むコグの名前を格納しておく。
 INITIAL_EXTENSIONS = [
-    #'cogs.response',
+    'cogs.bump',
+    'cogs.gatya',
+    'cogs.response',
+    'cogs.talk2',
+    'userlist',
     #'cogs.changehelp', こんなコマンド打つやつ見たことない
     'cogs.speaker',
-    #'cogs.managechannel' パージせずともチャンネル作り直せばよき。管理者コマンド実装用に保持
+    'cogs.managechannel'
 ]
 
 # クラスの定義。ClientのサブクラスであるBotクラスを継承。
