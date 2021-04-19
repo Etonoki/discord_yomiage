@@ -35,6 +35,3 @@ class Zattu(commands.Bot):
 
 # Zattanのインスタンス化及び起動処理。kiriko
 if __name__ == '__main__':
-    discord_intents = discord.Intents.all()
-    zattu = Zattu(command_prefix='/',intents=discord_intents)
-    zattu.run('NjM5NDk1NzEyNjM1MDkzMDE1.XbsG7w.rn-dZI4bex9YqdXDt_cqKHf18L8')
