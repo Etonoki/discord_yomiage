@@ -1,0 +1,4 @@
+discord.py[voice]
+requests==2.12.4
+pip
+opuslib

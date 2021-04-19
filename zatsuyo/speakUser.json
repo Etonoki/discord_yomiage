@@ -1,0 +1,64 @@
+﻿{
+    "646520557583466560": {
+        "speaker": "haruka",
+        "pitch": 70,
+        "speed": 55,
+        "volume": 130
+    },
+    "645141235056771082": {
+        "text": "",
+        "speaker": "hikari",
+        "pitch": 110,
+        "speed": 110,
+        "volume": 140
+    },
+    "328558770164727811": {
+        "text": "tesuto",
+        "speaker": "hikari",
+        "pitch": 150,
+        "speed": 100,
+        "volume": 140
+    },
+    "292673772618645504": {
+        "text": "\u597d\u304d\u306a\u306e\u306f\u30c1\u30e7\u30b3\u3067\u3059",
+        "speaker": "haruka",
+        "pitch": 150,
+        "speed": 80,
+        "volume": 140
+    },
+    "640845525691793409": {
+        "text": "\u30c1\u30e3\u30fc\u30ea\u30fc\u3068\u3089\u308c\u305f\u30fc",
+        "speaker": "hikari",
+        "pitch": 110,
+        "speed": 110,
+        "volume": 140
+    },
+    "468777279422595082": {
+        "text": "\u3053\u3093\u306b\u3061\u306f",
+        "speaker": "hikari",
+        "pitch": 110,
+        "speed": 110,
+        "volume": 140
+    },
+    "609419915538989159": {
+        "text": "\u8349",
+        "speaker": "hikari",
+        "pitch": 200,
+        "speed": 60,
+        "volume": 140
+    },
+    "392643533602947075": {
+        "text": "\u304a\u3044",
+        "speaker": "show",
+        "pitch": 120,
+        "speed": 100,
+        "volume": 140
+    },
+    "657585347663757314": {
+        "text": "\u3068\u308a\u3055\u3093\u3069\u30fc\u3082",
+        "speaker": "hikari",
+        "pitch": 110,
+        "speed": 110,
+        "volume": 140
+    }
+}
