@@ -11,7 +11,7 @@ INITIAL_EXTENSIONS = [
     'cogs.gatya',
     'cogs.response',
     'cogs.talk2',
-    'userlist',
+    'cogs.userlist',
     #'cogs.changehelp', こんなコマンド打つやつ見たことない
     'cogs.speaker',
     'cogs.managechannel'
