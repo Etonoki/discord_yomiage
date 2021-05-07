@@ -354,11 +354,11 @@ class Speaker(commands.Cog):
 
         if "/" in message.content: 
             return
-        if message.content.startswith("!"): 
-            return
         if "@" in message.content: 
             return
         if ":" in message.content: 
+            return
+        if message.content.startswith("!"): 
             return
         if message.content.startswith("#"): 
             return
@@ -370,7 +370,9 @@ class Speaker(commands.Cog):
             return
         if message.content.startswith("*"): 
             return
-
+        if message.content.startswith("-"): 
+            return
+        
         #読み上げ条件
         if message.guild.voice_client != None:
             #botがボイスチャットにいる
