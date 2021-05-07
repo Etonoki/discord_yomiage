@@ -104,8 +104,10 @@ class Response(commands.Cog):
         guild = self.bot.get_guild(piriko)
         channel = guild.get_channel(tuuwa)
         
-        #botがボイスチャットにいる
-        if guild.voice_client.is_connected():
+        await asyncio.sleep(90)
+        
+        #botがボイスチャットにいる且つ通話に参加していない場合
+        if guild.voice_client.is_connected() and member.voice is None:
             await channel.send('{} さん いらっしゃいませ！\nよければ通話にご参加くださいね。'.format(member.mention))
 
 
