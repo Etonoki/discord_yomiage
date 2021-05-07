@@ -67,6 +67,7 @@ class Speaker(commands.Cog):
                 else:
                     vc = member.voice.channel
                     await vc.connect()
+                    await self.bot.change_presence(activity=discord.CustomActivity(name='通話に参加中'))
                     return
             else:
                 return
@@ -214,6 +215,7 @@ class Speaker(commands.Cog):
                 else:
                     vc = guild.voice_client
                     await vc.disconnect()
+                    await self.bot.change_presence(activity=discord.CustomActivity(name='*sum で通話に参加します'))
                     return
             else:
                 return
@@ -230,6 +232,7 @@ class Speaker(commands.Cog):
         else:
             vc = ctx.author.voice.channel
             await vc.connect()
+            await self.bot.change_presence(activity=discord.CustomActivity(name='通話に参加中'))
             return
             
     @commands.command(aliases=['dis'])
@@ -240,6 +243,7 @@ class Speaker(commands.Cog):
         else:
             vc = ctx.guild.voice_client
             await vc.disconnect()
+            await self.bot.change_presence(activity=discord.CustomActivity(name='*sum で通話に参加します'))
             return
 
 
@@ -307,6 +311,7 @@ class Speaker(commands.Cog):
         if len(guild.voice_client.channel.members) == 1:
             vc = guild.voice_client
             await vc.disconnect()
+            await self.bot.change_presence(activity=discord.CustomActivity(name='*sum で通話に参加します'))
             return
 
         # ボイスチャンネルから退室
