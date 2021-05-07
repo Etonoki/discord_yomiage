@@ -5,6 +5,10 @@ import asyncio
 import io
 import aiohttp
 
+#鯖
+piriko = 824660451509796914
+#通話募集チャンエル
+tuuwa = 840085935860613151
 
 # コグとして用いるクラスを定義。
 class Response(commands.Cog):
@@ -90,6 +94,19 @@ class Response(commands.Cog):
 
 #####################################################################################################################
 
+
+    ###入ったときにメンション
+    @commands.Cog.listener()
+    async def on_member_join(self,member):
+        if member.bot:
+            return
+        
+        guild = self.bot.get_guild(piriko)
+        channel = guild.get_channel(tuuwa)
+        
+        #botがボイスチャットにいる
+        if guild.voice_client.is_connected():
+            await channel.send('{} さん いらっしゃいませ！\nよければ通話にご参加くださいね。'.format(member.mention))
 
 
     #message...他のctx+argみたいな感じ
