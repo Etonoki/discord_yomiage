@@ -289,8 +289,6 @@ class Speaker(commands.Cog):
     async def before_mplayer(self):
         print('waiting...')
         await self.bot.wait_until_ready()
-        #なんとなくステータスを変更
-        await self.bot.change_presence(activity=discord.Game(name='歌姫楽宴'))
         
 
     #VC入退室時の処理
