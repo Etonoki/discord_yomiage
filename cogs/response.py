@@ -123,8 +123,8 @@ class Response(commands.Cog):
         if message.channel.id == 824660592534093875:
             await asyncio.sleep(90)
             #botがボイスチャットにいる且つ通話に参加していない場合
-            if guild.voice_client.is_connected() and member.voice is None:
-                await channel.send('{} さん いらっしゃいませ！\nよければ通話にご参加くださいね。'.format(member.mention))
+            if guild.voice_client.is_connected() and message.author.voice is None:
+                await channel.send('{} さん いらっしゃいませ！\nよければ通話にご参加くださいね。'.format(message.author.mention))
             
             
 # Bot本体側からコグを読み込む際に呼び出される関数。
