@@ -38,6 +38,7 @@ class Zattan(commands.Bot):
         print('-----')
         print(self.user.name)
         print(self.user.id)
+        await self.bot.change_presence(activity=discord.CustomActivity(name='*sum で通話に参加します'))
         print('-----')
 
 # Zattanのインスタンス化及び起動処理
