@@ -38,6 +38,16 @@ class Speaker(commands.Cog):
     async def restart(self, ctx):
         await self.bot.logout()
 
+        
+    ###ttsを付与
+    @commands.Cog.listener()
+    async def on_member_join(self,member):
+        if member.bot:
+            return
+
+        guild = member.guild
+        ttsrole = guild.get_role(827887373106544682)
+        await member.add_roles(ttsrole)
 
     #特定のメッセージにリアクションがついたときの動作
     @commands.Cog.listener()
