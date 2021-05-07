@@ -67,16 +67,6 @@ class Response(commands.Cog):
                 await ctx.send(file=discord.File(data, 'fox.jpg'))
 
     @commands.command()
-    async def goat(self, ctx):
-        async with aiohttp.ClientSession() as session:
-            async with session.get("https://placegoat.com/400") as resp:
-                if resp.status != 200:
-                    return await ctx.send('Could not download file...')
-                data = io.BytesIO(await resp.read())
-                await ctx.send(file=discord.File(data, 'goat.jpg'))
-        
-
-    @commands.command()
     async def shiba(self, ctx):
         url = ""
         async with aiohttp.ClientSession() as session:
@@ -94,7 +84,7 @@ class Response(commands.Cog):
 
 #####################################################################################################################
 
-
+    """
     ###入ったときにメンション
     @commands.Cog.listener()
     async def on_member_join(self,member):
@@ -109,14 +99,17 @@ class Response(commands.Cog):
         #botがボイスチャットにいる且つ通話に参加していない場合
         if guild.voice_client.is_connected() and member.voice is None:
             await channel.send('{} さん いらっしゃいませ！\nよければ通話にご参加くださいね。'.format(member.mention))
-
+    """
 
     #message...他のctx+argみたいな感じ
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author.bot:
             return
-
+        
+        guild = self.bot.get_guild(piriko)
+        channel = guild.get_channel(tuuwa)
+        
         #メンションを送られた時
         #if self.bot.user in message.mentions:
 
@@ -126,8 +119,14 @@ class Response(commands.Cog):
         if message.content.startswith("."):
             await asyncio.sleep(3)
             await message.delete()
-
-
+        
+        if message.channel.id == 824660592534093875:
+            await asyncio.sleep(90)
+            #botがボイスチャットにいる且つ通話に参加していない場合
+            if guild.voice_client.is_connected() and member.voice is None:
+                await channel.send('{} さん いらっしゃいませ！\nよければ通話にご参加くださいね。'.format(member.mention))
+            
+            
 # Bot本体側からコグを読み込む際に呼び出される関数。
 def setup(bot):
     bot.add_cog(Response(bot)) # ResponseにBotを渡してインスタンス化し、Botにコグとして登録する。
