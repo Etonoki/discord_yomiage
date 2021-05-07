@@ -103,7 +103,7 @@ class Gatya(commands.Cog):
                         li = card["result"][0]['name']
                         msg = await ctx.send(file=discord.File(data1, f'sign{i}.png'))
                         await ctx.send(f"【SSR】{li}",file=discord.File(data2, f'image{i}.png'))
-                        await asyncio.sleep(1)
+                        await asyncio.sleep(3)
                         await msg.delete()
 
             else:
