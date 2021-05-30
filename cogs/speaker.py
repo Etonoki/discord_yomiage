@@ -364,6 +364,10 @@ class Speaker(commands.Cog):
 
         if "/" in message.content: 
             return
+        if "）" in message.content: 
+            return
+        if ")" in message.content: 
+            return
         if "@" in message.content: 
             return
         if ":" in message.content: 
