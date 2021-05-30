@@ -408,9 +408,10 @@ class Speaker(commands.Cog):
                 texxxt = ""
                 #長文だったら
                 if len(message.content) > 40:
-                    texxxt = message.content[:25] + "以下略"
+                    texxxt = message.content[:30] + "以下略"
                 else:
                     texxxt = message.content
+
                 #語尾ｗｗ
                 if message.content.endswith("ww"):
                     texxxt = texxxt.rstrip('w') + "わらわら"
@@ -420,6 +421,11 @@ class Speaker(commands.Cog):
                     texxxt = texxxt.rstrip('w') + "わら"
                 elif message.content.endswith("ｗ"):
                     texxxt = texxxt.rstrip('ｗ') + "わら"
+
+                #語尾顔文字
+                if "（" in message.content or "(" in message.content:
+                    texxxt = texxxt[:texxxt.find('(')]
+                    texxxt = texxxt[:texxxt.find('（')] 
 
                 #テキストデータの受け取り用id
                 userID = str(message.author.id)
