@@ -25,7 +25,7 @@ class Talk(commands.Cog):
         if message.author.bot:
             return
 
-        #よくわからんからメンションを色々して外してる
+        #api処理前にメンションを外す
         # or message.channel.id == チャンネルIDでそこで
         if self.bot.user in message.mentions or isinstance(message.channel, discord.DMChannel):
             send_data['utterance'] = message.content.strip("<@639495712635093015>")
